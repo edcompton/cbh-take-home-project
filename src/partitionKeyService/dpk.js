@@ -1,6 +1,10 @@
 import crypto from 'crypto';
 import config from '../config/config';
 
+function createHashDigest(value) {
+  return crypto.createHash('sha3-512').update(value).digest('hex');
+}
+
 function deterministicPartitionKey(event) {
   const { trivialPartitionKey, maxPartitionKeyLength } = config;
 
@@ -16,10 +20,10 @@ function deterministicPartitionKey(event) {
     event = JSON.stringify(event);
   }
 
-  const partitionKey = crypto.createHash('sha3-512').update(event).digest('hex');
+  const partitionKey = createHashDigest(event);
 
   if (partitionKey.length > maxPartitionKeyLength) {
-    return crypto.createHash('sha3-512').update(partitionKey).digest('hex');
+    return createHashDigest(partitionKey);
   }
 
   return partitionKey;

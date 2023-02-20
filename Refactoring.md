@@ -12,7 +12,12 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 1. First, I will write unit tests to cover the existing functionality of deterministicPartitionKey. I will use Jest as the testing library.
 
-2. 
+2. Second, the big refactor;
+    - I added linting rules and jest config with babel, to enable use of modules.
+    - I added local .env and a config file for the constants.
+    - I added early error handling and return statements, to ensure the crypto code is only run when necessary.
+    - I added type checks.
+    - I created a reusable function for the crypto call. 
 
 ### Other considerations
 - With more time, I would convert to typescript to leverage better type safety prior to run time.
