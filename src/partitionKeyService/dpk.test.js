@@ -1,5 +1,5 @@
-const { deterministicPartitionKey } = require('./dpk');
-const crypto = require('crypto');
+import { deterministicPartitionKey } from './dpk';
+import crypto from 'crypto';
 
 jest.mock('crypto');
 

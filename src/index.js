@@ -1,4 +1,4 @@
-const { deterministicPartitionKey } = require('./dpk');
+import { deterministicPartitionKey } from './partitionKeyService/dpk';
 
 console.log(deterministicPartitionKey({ key: 'value'.repeat(100) }));
 console.log(deterministicPartitionKey({ key: 'value', bool: true, num: 123 }));

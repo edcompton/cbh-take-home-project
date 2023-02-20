@@ -1,6 +1,6 @@
 # Refactoring
 
-You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.js`](dpk.js) to make it easier to read and understand without changing its functionality. For this task, you should:
+You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.js`](src/partitionKeyService/dpk.js) to make it easier to read and understand without changing its functionality. For this task, you should:
 
 1. Write unit tests to cover the existing functionality and ensure that your refactor doesn't break it. We typically use `jest`, but if you have another library you prefer, feel free to use it.
 2. Refactor the function to be as "clean" and "readable" as possible. There are many valid ways to define those words - use your own personal definitions, but be prepared to defend them. Note that we do like to use the latest JS language features when applicable.
@@ -17,3 +17,4 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 ### Other considerations
 - With more time, I would convert to typescript to leverage better type safety prior to run time.
 - I'd add comprehensive error handling.
+- You could remove the unnecessary variable assignments at the top and return 0 explicitly, but the variable naming convention may be helpful in readability.
